@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 
-import { anton, moldie, qurova, roboto, transcity } from "@/fonts";
+import {
+  anton,
+  moldie,
+  qurova,
+  roboto,
+  transcity,
+  headlineSans,
+  headlineMozi,
+  headlineFin,
+} from "@/fonts";
 
 import "./globals.css";
 import Providers from "@/providers";
+import Navbar from "@/components/core/navbar";
 
 export const metadata: Metadata = {
   title: "Ritesh Mishra — Full Stack Developer",
@@ -26,10 +36,16 @@ export default function RootLayout({
         ${moldie.variable}
         ${transcity.variable}
         ${roboto.variable}
+        ${headlineSans.variable}
+        ${headlineMozi.variable}
+        ${headlineFin.variable}
       `}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );

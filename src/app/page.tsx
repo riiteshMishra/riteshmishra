@@ -1,11 +1,13 @@
+import { GradientOrb } from "@/components/common/backgrounds";
+import Introduction from "@/components/core/home/Introduction";
+
 const Home = () => {
   return (
-    <div className=" font-qurova text-4xl">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nulla
-      cupiditate nobis sit illo soluta, repellendus obcaecati temporibus. Id,
-      iure. Ut sunt repudiandae error? Blanditiis obcaecati eum cumque corporis
-      ab.
-    </div>
+    <main className="relative min-h-screen overflow-hidden py-16 space-y-10">
+      <GradientOrb />
+      <Introduction />
+      {/* <RitesMishra /> */}
+    </main>
   );
 };
 
