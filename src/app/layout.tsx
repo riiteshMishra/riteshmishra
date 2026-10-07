@@ -14,6 +14,7 @@ import {
 import "./globals.css";
 import Providers from "@/providers";
 import Navbar from "@/components/core/navbar";
+import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: "Ritesh Mishra — Full Stack Developer",
@@ -45,6 +46,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

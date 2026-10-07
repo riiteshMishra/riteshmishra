@@ -1,13 +1,9 @@
 "use client";
 
-import ProjectsBox from "@/components/core/projects";
+import ProjectsPageData from "@/components/core/projects";
 
 const ProjectsPage = () => {
-  return (
-    <div>
-      <ProjectsBox />
-    </div>
-  );
+  return <ProjectsPageData />;
 };
 
 export default ProjectsPage;
