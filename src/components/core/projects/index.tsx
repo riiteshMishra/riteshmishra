@@ -5,7 +5,7 @@ import ProjectsCta from "./projects-cta";
 
 const ProjectsPageData = () => {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8">
+    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 overflow-hidden">
       <ProjectsHero />
 
       <ProjectGrid projects={projects} />

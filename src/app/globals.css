@@ -46,14 +46,17 @@
   --font-headline-fin: var(--font-family-headline-fin);
 
   /* LOCAL FONTS */
-  --font-qurova: var(--font-family-qurova);
   --font-anton: var(--font-family-anton);
-  --font-moldie: var(--font-family-moldie);
-  --font-transcity: var(--font-family-transcity);
 }
 
 body {
   background: var(--bg-dark);
   color: var(--text-primary);
   font-family: var(--font-family-roboto), sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
 }

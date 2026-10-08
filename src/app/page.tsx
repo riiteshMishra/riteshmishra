@@ -1,8 +1,4 @@
-import {
-  Aurora,
-  GradientOrb,
-  MeshGradient,
-} from "@/components/common/backgrounds";
+import { GradientOrb } from "@/components/common/backgrounds";
 import AboutSection from "@/components/core/home/about";
 import Developer from "@/components/core/home/developer/Developer";
 import ExperiencePage from "@/components/core/home/experience/experience-page";
@@ -19,10 +15,12 @@ const Home = () => {
         <Introduction />
         <Developer />
       </div>
+
       <div className="relative overflow-hidden py-16">
         <GradientOrb />
         <AboutSection />
       </div>
+
       <ProjectsPageData />
       <ExperiencePage />
       <ServicesPage />

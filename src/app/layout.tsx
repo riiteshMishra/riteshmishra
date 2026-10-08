@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 
 import {
   anton,
-  moldie,
-  qurova,
   roboto,
-  transcity,
   headlineSans,
   headlineMozi,
   headlineFin,
@@ -32,10 +29,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={`
-        ${qurova.variable}
         ${anton.variable}
-        ${moldie.variable}
-        ${transcity.variable}
         ${roboto.variable}
         ${headlineSans.variable}
         ${headlineMozi.variable}

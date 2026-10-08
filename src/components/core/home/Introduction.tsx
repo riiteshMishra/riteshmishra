@@ -13,13 +13,12 @@ const Introduction = () => {
           <GreenChip title="Available for new projects" />
         </MotionFadeUp>
 
-        <MotionFadeUp delay={0.1}>
-          <h1 className="mt-6 font-headline-mozi text-5xl font-bold tracking-tight text-text-primary sm:text-6xl md:text-7xl">
-            Building digital
-            <br />
-            <span className="text-accent-green">experiences</span> that matter.
-          </h1>
-        </MotionFadeUp>
+        {/* LCP element — render immediately */}
+        <h1 className="mt-6 font-headline-mozi text-5xl font-bold tracking-tight text-text-primary sm:text-6xl md:text-7xl">
+          Building digital
+          <br />
+          <span className="text-accent-green">experiences</span> that matter.
+        </h1>
 
         <MotionFadeUp delay={0.2}>
           <p className="mx-auto mt-6 max-w-2xl font-headline-sans text-base leading-7 text-text-muted sm:text-lg">
@@ -28,7 +27,6 @@ const Introduction = () => {
           </p>
         </MotionFadeUp>
 
-        {/* BUTTONS */}
         <MotionFadeUp
           delay={0.3}
           className="mt-8 flex flex-wrap items-center justify-center gap-4"

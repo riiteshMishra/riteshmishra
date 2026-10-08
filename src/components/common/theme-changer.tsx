@@ -3,9 +3,29 @@
 import { Moon, Sun } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTheme } from "next-themes";
+import { useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 const ThemeChanger = () => {
   const { resolvedTheme, setTheme } = useTheme();
+
+  // false during SSR, true after hydration
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
+
+  if (!mounted) {
+    return (
+      <button
+        type="button"
+        aria-label="Toggle theme"
+        className="relative flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-card text-text-primary"
+      />
+    );
+  }
 
   const isDark = resolvedTheme === "dark";
 
@@ -14,7 +34,7 @@ const ThemeChanger = () => {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
-      className="relative flex size-10 items-center justify-center overflow-hidden rounded-full border border-border bg-card text-text-primary transition-colors hover:border-accent-green/40 cursor-pointer"
+      className="relative flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-border bg-card text-text-primary transition-colors hover:border-accent-green/40"
     >
       <AnimatePresence mode="wait" initial={false}>
         {isDark ? (

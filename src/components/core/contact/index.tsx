@@ -39,7 +39,7 @@ const contactDetails = [
 
 const ContactPage = () => {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8">
+    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 overflow-hidden">
       {/* Hero */}
       <section className="mb-16 max-w-3xl">
         <p className="mb-4 font-roboto text-sm font-medium uppercase tracking-[0.2em] text-accent-green">
