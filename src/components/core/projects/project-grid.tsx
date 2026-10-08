@@ -1,5 +1,5 @@
-import ProjectCard, { type Project } from "./project-card";
-
+import ProjectCard from "./project-card";
+import type { Project } from "@/data/content/projects";
 interface ProjectGridProps {
   projects: Project[];
 }
