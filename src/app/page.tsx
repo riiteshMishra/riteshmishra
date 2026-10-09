@@ -6,15 +6,16 @@ import Introduction from "@/components/core/home/Introduction";
 import ProjectsPageData from "@/components/core/projects";
 import ServicesPage from "@/components/core/services";
 import ContactPage from "@/components/core/contact";
+import HomeHero from "@/components/core/home/home-hero";
 
 const Home = () => {
   return (
     <main>
-      <div className="relative overflow-hidden py-16">
+      <HomeHero>
         <GradientOrb />
         <Introduction />
         <Developer />
-      </div>
+      </HomeHero>
 
       <div className="relative overflow-hidden py-16">
         <GradientOrb />

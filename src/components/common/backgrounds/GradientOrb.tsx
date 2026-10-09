@@ -4,7 +4,10 @@ import { motion } from "motion/react";
 
 const GradientOrb = () => {
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidde overflow-clip">
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    >
       {/* Left Orb */}
       <motion.div
         className="absolute -left-40 -top-40 size-125 rounded-full bg-emerald-500/20 blur-[120px] will-change-transform"

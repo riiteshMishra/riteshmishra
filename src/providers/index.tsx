@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { MotionConfig } from "motion/react";
 
 type ProvidersProps = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const Providers = ({ children }: ProvidersProps) => {
       enableSystem={false}
       disableTransitionOnChange
     >
-      {children}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </ThemeProvider>
   );
 };

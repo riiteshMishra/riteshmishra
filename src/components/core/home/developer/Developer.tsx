@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-import MotionFadeUp from "@/components/common/motion-fade-up";
+import { fadeUpItem } from "@/lib/animations";
 
 import DeveloperGlow from "./DeveloperGlow";
 import DeveloperRing from "./DeveloperRing";
@@ -11,14 +11,14 @@ import DeveloperIcons from "./DeveloperIcons";
 
 const Developer = () => {
   return (
-    <MotionFadeUp delay={0.4} className="mt-14">
+    <motion.div variants={fadeUpItem} className="mt-14">
       <motion.div
-        className="relative mx-auto size-52 sm:size-60"
+        className="relative mx-auto size-52 will-change-transform sm:size-60"
         animate={{
-          y: [0, -8, 0],
+          y: [0, -4, 0],
         }}
         transition={{
-          duration: 5,
+          duration: 6,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -31,7 +31,7 @@ const Developer = () => {
 
         <DeveloperImage />
       </motion.div>
-    </MotionFadeUp>
+    </motion.div>
   );
 };
 
