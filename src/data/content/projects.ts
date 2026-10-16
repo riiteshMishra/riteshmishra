@@ -1,10 +1,13 @@
+import { eventM, homework, realbattle, studyNotion } from "@/assets";
+import { StaticImageData } from "next/image";
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   tags: string[];
   category: string;
-  image: string;
+  image: string | StaticImageData;
   liveDemo: string;
   github: string;
   featured: boolean;
@@ -26,9 +29,9 @@ export const projects: Project[] = [
       "Redis",
     ],
     category: "Gaming Platform",
-    image: "/projects/real-battle.webp",
-    liveDemo: "https://real-battle-client.vercel.app",
-    github: "https://github.com/Parle-ji/real-battle-client",
+    image: realbattle,
+    liveDemo: "https://dashboard.realbattle.in",
+    github: "#",
     featured: true,
   },
   {
@@ -38,10 +41,10 @@ export const projects: Project[] = [
       "An educational platform focused on delivering a structured learning experience with modern frontend architecture and backend services.",
     tags: ["React", "Next.js", "Node.js", "Express.js", "MongoDB"],
     category: "Education",
-    image: "/projects/edtech.webp",
+    image: studyNotion,
     liveDemo: "#",
     github: "#",
-    featured: false,
+    featured: true,
   },
   {
     id: "event-management",
@@ -50,10 +53,10 @@ export const projects: Project[] = [
       "A web application concept for managing events, participants and event-related workflows through a centralized platform.",
     tags: ["React", "Node.js", "Express.js", "MongoDB"],
     category: "Management",
-    image: "/projects/event-management.webp",
+    image: eventM,
     liveDemo: "#",
     github: "#",
-    featured: false,
+    featured: true,
   },
   {
     id: "homework-backend",
@@ -62,10 +65,10 @@ export const projects: Project[] = [
       "A backend system focused on APIs, authentication, validation and structured data management for an educational workflow.",
     tags: ["Node.js", "Express.js", "MongoDB", "JWT", "Zod"],
     category: "Backend",
-    image: "/projects/homework.webp",
+    image: homework,
     liveDemo: "#",
     github: "#",
-    featured: false,
+    featured: true,
   },
   {
     id: "random-gif",
@@ -74,10 +77,10 @@ export const projects: Project[] = [
       "A React application for discovering random GIFs with state management implemented using Redux.",
     tags: ["React", "Redux", "JavaScript", "API"],
     category: "Frontend",
-    image: "/projects/random-gif.webp",
+    image: "",
     liveDemo: "#",
     github: "#",
-    featured: false,
+    featured: true,
   },
   {
     id: "library-management",
@@ -86,9 +89,9 @@ export const projects: Project[] = [
       "A modern library management application designed to handle library information, users and administrative workflows.",
     tags: ["Next.js", "React", "TypeScript", "Firebase", "Tailwind CSS"],
     category: "Management",
-    image: "/projects/library.webp",
+    image: studyNotion,
     liveDemo: "#",
     github: "#",
-    featured: false,
+    featured: true,
   },
 ];

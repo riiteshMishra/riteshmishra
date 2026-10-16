@@ -6,7 +6,7 @@ import { pageShell } from "@/lib/layout";
 
 const ProjectsPageData = () => {
   return (
-    <main className={`${pageShell} overflow-hidden`}>
+    <main className={`${pageShell} `}>
       <ProjectsHero />
 
       <ProjectGrid projects={projects} />

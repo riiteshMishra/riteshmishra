@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+
+import { createPageMetadata } from "@/lib/seo";
 import ExperiencePage from "@/components/core/experience/experience-page";
 
-const page = () => {
-  return <ExperiencePage />;
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Experience",
+  description:
+    "Explore Ritesh Mishra's development experience, technical work, and practical projects in modern web development.",
+  path: "/experience",
+});
 
-export default page;
+export default function Page() {
+  return <ExperiencePage />;
+}

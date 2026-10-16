@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { absoluteUrl } from "@/lib/seo";
-
-const publicRoutes = ["/", "/about", "/projects", "/skills", "/contact"];
+import { publicRoutes } from "@/lib/public-routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return publicRoutes.map((path) => ({ url: absoluteUrl(path) }));

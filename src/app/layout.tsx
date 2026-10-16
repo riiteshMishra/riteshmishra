@@ -9,11 +9,10 @@ import {
 } from "@/fonts";
 
 import "./globals.css";
-import Footer from "@/components/common/Footer";
 import JsonLd from "@/components/seo/JsonLd";
-import Navbar from "@/components/core/navbar";
 import { personJsonLd, siteConfig, siteUrl, websiteJsonLd } from "@/lib/seo";
 import Providers from "@/providers";
+import SiteChrome from "@/components/common/SiteChrome";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -77,9 +76,7 @@ export default function RootLayout({
         <JsonLd data={websiteJsonLd} />
         <JsonLd data={personJsonLd} />
         <Providers>
-          <Navbar />
-          {children}
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </Providers>
       </body>
     </html>

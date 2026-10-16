@@ -1,7 +1,9 @@
-import React from "react";
+import type { ReactNode } from "react";
 
-const ProjectPageLayout = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
-};
-
-export default ProjectPageLayout;
+export default function ProjectPageLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return <>{children}</>;
+}
