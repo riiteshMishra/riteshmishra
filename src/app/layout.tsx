@@ -13,6 +13,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { personJsonLd, siteConfig, siteUrl, websiteJsonLd } from "@/lib/seo";
 import Providers from "@/providers";
 import SiteChrome from "@/components/common/SiteChrome";
+import Navigaion from "@/components/common/navigation";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -77,6 +78,7 @@ export default function RootLayout({
         <JsonLd data={personJsonLd} />
         <Providers>
           <SiteChrome>{children}</SiteChrome>
+          <Navigaion />
         </Providers>
       </body>
     </html>
