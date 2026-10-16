@@ -5,10 +5,20 @@ import Currently from "@/components/core/about/currently";
 import DevelopmentApproach from "@/components/core/about/development-approach";
 import TechStack from "@/components/core/about/tech-stack";
 import WhatIBuild from "@/components/core/about/what-i-build";
+import { pageShell } from "@/lib/layout";
+import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "About",
+  description:
+    "Learn about Ritesh Mishra, a Full Stack Developer focused on building modern, scalable web applications.",
+  path: "/about",
+});
 
 const AboutPage = () => {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8">
+    <main>
       <AboutHero />
 
       <AboutIntroduction />

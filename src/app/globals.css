@@ -70,3 +70,7 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+* {
+  /* outline: 1px solid red; */
+}

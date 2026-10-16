@@ -1,10 +1,11 @@
 import MotionFadeUp from "@/components/common/motion-fade-up";
 import { skillsHero } from "@/data/content/skills";
+import { pageHero } from "@/lib/layout";
 
 const SkillsHero = () => {
   return (
     <MotionFadeUp>
-      <section className="mb-20 max-w-3xl">
+      <section className={pageHero}>
         <p className="mb-4 font-roboto text-sm font-medium uppercase tracking-[0.2em] text-accent-green">
           {skillsHero.eyebrow}
         </p>

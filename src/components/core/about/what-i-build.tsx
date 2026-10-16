@@ -1,9 +1,10 @@
 import MotionFadeUp from "@/components/common/motion-fade-up";
 import { whatIBuildItems } from "@/data/content/about";
+import { sectionGap } from "@/lib/layout";
 
 const WhatIBuild = () => {
   return (
-    <section className="mt-24 relative w-full max-w-6xl mx-auto">
+    <section className={`${sectionGap} relative mx-auto w-full max-w-6xl`}>
       <MotionFadeUp>
         <div className="max-w-2xl">
           <p className="font-roboto text-sm font-medium uppercase tracking-[0.2em] text-accent-green">
@@ -28,7 +29,7 @@ const WhatIBuild = () => {
 
           return (
             <MotionFadeUp key={item.title} delay={index * 0.1}>
-              <div className="h-full rounded-3xl border border-border bg-card/50 p-7 transition-colors duration-300 hover:border-accent-green/30">
+              <div className="h-full rounded-3xl border border-border bg-card/50 p-6 transition-colors duration-300 hover:border-accent-green/30 sm:p-8">
                 <div className="flex size-11 items-center justify-center rounded-xl bg-accent-green/10 text-accent-green">
                   <Icon className="size-5" />
                 </div>

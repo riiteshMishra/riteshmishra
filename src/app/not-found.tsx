@@ -22,7 +22,7 @@ const NotFound = () => {
           Page not found
         </h1>
 
-        <p className="mt-4 max-w-md font-roboto text-text-muted">
+        <p className="mt-4 max-w-md font-headline-sans text-text-muted text-sm">
           The page you are looking for doesn&apos;t exist or may have been
           moved.
         </p>

@@ -1,9 +1,10 @@
 import { Terminal } from "lucide-react";
 import MotionFadeUp from "@/components/common/motion-fade-up";
+import { sectionGap } from "@/lib/layout";
 
 const Currently = () => {
   return (
-    <section className="mt-24 relative w-full max-w-6xl mx-auto">
+    <section className={`${sectionGap} relative mx-auto w-full max-w-6xl`}>
       <MotionFadeUp>
         <div className="relative overflow-hidden rounded-3xl border border-accent-green/20 bg-accent-green/5 p-8 sm:p-10">
           <div className="relative z-10 max-w-3xl">

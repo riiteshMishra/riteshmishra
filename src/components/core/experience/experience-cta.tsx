@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { sectionGap } from "@/lib/layout";
 
 const ExperienceCta = () => {
   return (
-    <section className="mt-24 rounded-3xl border border-border bg-card p-8 text-center sm:p-12">
+    <section className={`${sectionGap} rounded-3xl border border-border bg-card p-8 text-center sm:p-12`}>
       <p className="font-roboto text-sm font-medium text-accent-green">
         What&apos;s next?
       </p>

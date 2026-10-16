@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { skillsCta } from "@/data/content/skills";
+import { sectionGap } from "@/lib/layout";
 
 const SkillsCta = () => {
   return (
-    <section className="mt-24 rounded-3xl border border-border bg-card p-8 text-center sm:p-12">
+    <section className={`${sectionGap} rounded-3xl border border-border bg-card p-8 text-center sm:p-12`}>
       <Sparkles className="mx-auto size-8 text-accent-green" />
 
       <p className="mt-5 font-roboto text-sm font-medium text-accent-green">

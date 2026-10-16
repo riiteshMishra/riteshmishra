@@ -3,7 +3,7 @@ import MotionFadeUp from "@/components/common/motion-fade-up";
 
 const AboutCta = () => {
   return (
-    <section className="py-24 text-center">
+    <section className="py-16 text-center sm:py-24">
       <MotionFadeUp>
         <ArrowDown className="mx-auto size-5 animate-bounce text-accent-green" />
 

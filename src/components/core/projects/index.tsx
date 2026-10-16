@@ -2,10 +2,11 @@ import { projects } from "@/data/content/projects";
 import ProjectGrid from "./project-grid";
 import ProjectsHero from "./projects-hero";
 import ProjectsCta from "./projects-cta";
+import { pageShell } from "@/lib/layout";
 
 const ProjectsPageData = () => {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 overflow-hidden">
+    <main className={`${pageShell} overflow-hidden`}>
       <ProjectsHero />
 
       <ProjectGrid projects={projects} />

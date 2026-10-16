@@ -1,9 +1,10 @@
 import MotionFadeUp from "@/components/common/motion-fade-up";
+import { pageHero } from "@/lib/layout";
 
 const ProjectsHero = () => {
   return (
     <MotionFadeUp>
-      <section className="mb-20 max-w-3xl">
+      <section className={pageHero}>
         <p className="mb-4 font-roboto text-sm font-medium uppercase tracking-[0.2em] text-accent-green">
           My Projects
         </p>

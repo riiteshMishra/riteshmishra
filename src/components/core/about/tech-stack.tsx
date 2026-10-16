@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import MotionFadeUp from "@/components/common/motion-fade-up";
 import { techStack } from "@/data/content/about";
+import { sectionGap } from "@/lib/layout";
 
 interface TechCardProps {
   icon: LucideIcon;
@@ -19,7 +20,7 @@ const TechCard = ({
 }: TechCardProps) => {
   return (
     <MotionFadeUp delay={delay}>
-      <div className="rounded-3xl border border-border bg-card/50 p-7">
+      <div className="rounded-3xl border border-border bg-card/50 p-6 sm:p-8">
         <div className="flex items-center gap-3">
           <Icon
             className={
@@ -51,7 +52,7 @@ const TechCard = ({
 
 const TechStack = () => {
   return (
-    <section className="mt-24 relative w-full max-w-6xl mx-auto">
+    <section className={`${sectionGap} relative mx-auto w-full max-w-6xl`}>
       <MotionFadeUp>
         <div className="text-center">
           <p className="font-roboto text-sm font-medium uppercase tracking-[0.2em] text-accent-green">

@@ -1,23 +1,31 @@
 import { GradientOrb } from "@/components/common/backgrounds";
 import AboutSection from "@/components/core/home/about";
 import Developer from "@/components/core/home/developer/Developer";
-import ExperiencePage from "@/components/core/home/experience/experience-page";
+
 import Introduction from "@/components/core/home/Introduction";
 import ProjectsPageData from "@/components/core/projects";
 import ServicesPage from "@/components/core/services";
 import ContactPage from "@/components/core/contact";
-import HomeHero from "@/components/core/home/home-hero";
+import type { Metadata } from "next";
+import { createPageMetadata, siteConfig } from "@/lib/seo";
+import ExperiencePage from "@/components/core/experience/experience-page";
+
+export const metadata: Metadata = createPageMetadata({
+  title: siteConfig.title,
+  description: siteConfig.description,
+  path: "/",
+});
 
 const Home = () => {
   return (
     <main>
-      <HomeHero>
+      <div className="relative overflow-hidden py-16">
         <GradientOrb />
         <Introduction />
         <Developer />
-      </HomeHero>
+      </div>
 
-      <div className="relative overflow-hidden py-16">
+      <div className="relative overflow-hidden">
         <GradientOrb />
         <AboutSection />
       </div>

@@ -1,10 +1,11 @@
 import SkillsCta from "./skills-cta";
 import SkillsGrid from "./skills-grid";
 import SkillsHero from "./skills-hero";
+import { pageShell } from "@/lib/layout";
 
 const SkillsPage = () => {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8">
+    <main className={pageShell}>
       <SkillsHero />
 
       <SkillsGrid />

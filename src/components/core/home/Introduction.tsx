@@ -3,16 +3,10 @@
 import Button from "@/components/common/Button";
 import GreenChip from "@/components/common/green-chips";
 import { ArrowUpRight, FolderOpen } from "lucide-react";
-import { motion } from "motion/react";
-
-import { fadeUpItem } from "@/lib/animations";
 
 const Introduction = () => {
   return (
-    <motion.section
-      variants={fadeUpItem}
-      className="flex items-center justify-center px-5"
-    >
+    <section className="flex items-center justify-center px-5">
       <div className="mx-auto max-w-4xl text-center">
         <GreenChip title="Available for new projects" />
 
@@ -45,7 +39,7 @@ const Introduction = () => {
           </Button>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

@@ -1,13 +1,14 @@
 import { Code2 } from "lucide-react";
 import MotionFadeUp from "@/components/common/motion-fade-up";
 import { aboutFacts } from "@/data/content/about";
+import { sectionGap } from "@/lib/layout";
 
 const AboutIntroduction = () => {
   return (
     <div className="relative w-full max-w-6xl mx-auto">
-      <section className="mt-24 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+      <section className={`${sectionGap} grid gap-8 lg:grid-cols-[1.2fr_0.8fr]`}>
         <MotionFadeUp>
-          <div className="h-full rounded-3xl border border-border bg-card/60 p-7 backdrop-blur-sm sm:p-9">
+          <div className="h-full rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8">
             <div className="mb-6 flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-xl bg-accent-green/10 text-accent-green">
                 <Code2 className="size-5" />
@@ -46,7 +47,7 @@ const AboutIntroduction = () => {
             {aboutFacts.map((fact) => (
               <div
                 key={fact.label}
-                className="rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-sm"
+                className="rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8"
               >
                 <p className="font-roboto text-sm text-text-muted">
                   {fact.label}

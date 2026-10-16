@@ -1,10 +1,11 @@
 import ExperienceCta from "./experience-cta";
 import ExperienceHero from "./experience-hero";
 import ExperienceTimeline from "./experience-timeline";
+import { pageShell } from "@/lib/layout";
 
 const ExperiencePage = () => {
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 overflow-hidden">
+    <main className={`${pageShell}`}>
       <ExperienceHero />
 
       <ExperienceTimeline />

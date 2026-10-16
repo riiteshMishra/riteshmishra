@@ -1,14 +1,17 @@
-import React from "react";
+import type { Metadata } from "next";
+
+import ContactPage from "@/components/core/contact";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact",
+  description:
+    "Contact Ritesh Mishra to discuss a web application, product idea, or full-stack development project.",
+  path: "/contact",
+});
 
 const Contact = () => {
-  return (
-    <div>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-      explicabo neque fugit ipsa, cupiditate labore aliquid placeat aut eligendi
-      eaque soluta quis? Qui eveniet ratione asperiores quod ducimus minus
-      illum.
-    </div>
-  );
+  return <ContactPage />;
 };
 
 export default Contact;
