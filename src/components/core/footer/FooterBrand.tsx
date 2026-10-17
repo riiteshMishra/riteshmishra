@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowUpRight, Download, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
+import { FaDownload, FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "9565672752";
 
@@ -19,14 +20,14 @@ const FooterBrand = () => {
           Ritesh<span className="text-accent-green">.</span>
         </span>
 
-        <span className="mb-1 inline-flex items-center gap-1 rounded-full border border-accent-green/25 bg-accent-green/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent-green">
+        <span className="mb-1 inline-flex items-center gap-1 rounded-full border border-accent-green/25 bg-accent-green/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent-green font-headline-sans">
           <Sparkles size={11} />
           Developer
         </span>
       </Link>
 
       {/* Description */}
-      <p className="mt-4 max-w-sm font-roboto text-sm leading-7 text-text-muted">
+      <p className="mt-4 max-w-sm font-headline-sans text-sm leading-7 text-text-muted">
         Building thoughtful digital experiences with modern technologies, clean
         architecture, and a focus on performance.
       </p>
@@ -38,7 +39,7 @@ const FooterBrand = () => {
           <span className="relative inline-flex size-2 rounded-full bg-accent-green" />
         </span>
 
-        <span className="font-roboto text-xs font-medium text-text-muted">
+        <span className="font-headline-sans text-xs font-medium text-text-muted">
           Open to exciting opportunities
         </span>
       </div>
@@ -55,9 +56,8 @@ const FooterBrand = () => {
           className="group relative inline-flex min-h-12 items-center gap-2.5 overflow-hidden rounded-xl border border-accent-green/30 bg-accent-green/10 px-4 py-3 font-roboto text-sm font-semibold text-accent-green transition-colors duration-300 hover:border-accent-green/60 hover:bg-accent-green/15 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-green"
           aria-label="Contact Ritesh Mishra on WhatsApp"
         >
-          <MessageCircle size={17} strokeWidth={1.8} />
-
-          <span>Whatsapp</span>
+          <FaWhatsapp size={20} strokeWidth={1.8} />
+          <span className="font-headline-sans">Whatsapp</span>
 
           <ArrowUpRight
             size={15}
@@ -73,13 +73,13 @@ const FooterBrand = () => {
           whileTap={{ scale: 0.97 }}
           className="group inline-flex min-h-12 items-center gap-2.5 rounded-xl border border-border bg-card px-4 py-3 font-roboto text-sm font-semibold text-text-primary shadow-sm transition-colors duration-300 hover:border-accent-green/40 hover:bg-accent-green/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-green"
         >
-          <Download
+          <FaDownload
             size={17}
             strokeWidth={1.8}
             className="text-text-muted transition-colors group-hover:text-accent-green"
           />
 
-          <span>Download CV</span>
+          <span className="font-headline-sans">Download CV</span>
 
           <span className="rounded-md border border-border px-1.5 py-0.5 text-[9px] font-bold tracking-wide text-text-muted">
             PDF
@@ -88,7 +88,7 @@ const FooterBrand = () => {
       </div>
 
       {/* Small trust detail */}
-      <p className="mt-4 font-roboto text-xs leading-5 text-text-muted/80">
+      <p className="mt-4 font-headline-sans text-xs leading-5 text-text-muted/80">
         Have a project in mind? Let’s build something meaningful.
       </p>
     </div>

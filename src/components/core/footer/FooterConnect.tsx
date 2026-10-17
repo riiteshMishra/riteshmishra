@@ -1,21 +1,23 @@
 import Link from "next/link";
-import { ArrowUpRight, GitBranch, Link2, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { BsGithub } from "react-icons/bs";
+import { FaLinkedin, FaMailBulk } from "react-icons/fa";
 
 const socialLinks = [
   {
     label: "GitHub",
-    href: "https://github.com/Parle-ji",
-    icon: GitBranch,
+    href: "https://github.com/riiteshmishra",
+    icon: BsGithub,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
-    icon: Link2,
+    href: "https://www.linkedin.com/in/ritesh-mishra-059519352",
+    icon: FaLinkedin,
   },
   {
     label: "Email",
-    href: "mailto:hello@riteshmishra.online",
-    icon: Mail,
+    href: "mailto:riteshmishra.dev@gmail.com",
+    icon: FaMailBulk,
   },
 ];
 
@@ -29,7 +31,7 @@ const FooterConnect = () => {
           <a
             key={label}
             href={href}
-            target={href.startsWith("mailto:") ? undefined : "_blank"}
+            target={"_blank"}
             rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
             aria-label={label}
             className="flex size-10 items-center justify-center rounded-full border border-border bg-card text-text-muted transition-all duration-300 hover:border-accent-green/30 hover:text-accent-green"
@@ -41,10 +43,10 @@ const FooterConnect = () => {
 
       <Link
         href="/contact"
-        className="mt-5 inline-flex items-center gap-2 font-roboto text-sm font-medium text-accent-green"
+        className="mt-5 inline-flex items-center gap-2 font-roboto text-sm font-medium text-accent-green group hover:scale-105"
       >
         Let&apos;s work together
-        <ArrowUpRight className="size-4" />
+        <ArrowRight className="size-4 group-hover:translate-x-1  transition-all duration-75" />
       </Link>
     </div>
   );
