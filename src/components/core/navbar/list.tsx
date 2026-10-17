@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import { handleHaptic } from "@/components/common/navigation";
 
 interface NavItem {
   id: string;
@@ -24,8 +25,18 @@ const NavList = ({ navlist }: NavListProps) => {
           item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 
         return (
-          <motion.li key={item.id} className="relative font-headline-sans">
-            <Link href={item.href} className="relative block px-4 py-1">
+          <motion.li
+            key={item.id}
+            className="relative font-headline-sans"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+          >
+            <Link
+              href={item.href}
+              onClick={handleHaptic}
+              className="relative block px-4 py-1"
+            >
               {isActive && (
                 <motion.span
                   layoutId="active-nav"
