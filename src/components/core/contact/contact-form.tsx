@@ -15,14 +15,11 @@ const inputClass =
   "w-full rounded-2xl border border-border bg-background px-4 py-3 font-roboto text-sm outline-none transition-colors placeholder:text-text-muted/60 focus-visible:border-accent-green/50 focus-visible:ring-2 focus-visible:ring-accent-green/20 aria-[invalid=true]:border-red-500";
 
 const ContactForm = () => {
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
-    null,
-  );
+  const [submitStatus, setSubmitStatus] = useState<"error" | null>(null);
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     mode: "onBlur",
@@ -35,23 +32,12 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
+  const onSubmit: SubmitHandler<ContactFormValues> = async () => {
     setSubmitStatus(null);
 
-    try {
-      // TODO: Apne contact API endpoint ko yahan connect karo.
-      // Example:
-      // await axiosInstance.post("/contact", data);
-
-      console.log("Contact form data:", data);
-
-      // Demo success state only. API connect hone ke baad
-      // success tabhi set karo jab server request successful ho.
-      setSubmitStatus("success");
-      reset();
-    } catch {
-      setSubmitStatus("error");
-    }
+    // No contact submission endpoint is configured in this project.
+    // Do not report success unless a real request succeeds.
+    setSubmitStatus("error");
   };
 
   return (
@@ -243,18 +229,10 @@ const ContactForm = () => {
         </div>
 
         {/* Submission feedback */}
-        {submitStatus === "success" && (
-          <p
-            role="status"
-            className="rounded-xl border border-accent-green/20 bg-accent-green/5 p-3 text-sm text-accent-green"
-          >
-            Demo submitted successfully. Connect the API to send your message.
-          </p>
-        )}
-
         {submitStatus === "error" && (
           <p role="alert" className="text-sm text-red-500">
-            Something went wrong. Please try again.
+            The contact form is not connected to a backend yet. Please email
+            riteshmishra.dev@gmail.com directly.
           </p>
         )}
 

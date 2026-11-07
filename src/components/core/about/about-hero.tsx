@@ -16,11 +16,11 @@ const AboutHero = () => {
         </MotionFadeUp>
 
         <MotionFadeUp delay={0.1}>
-          <h1 className="font-headline-mozi text-5xl font-bold tracking-tight text-text-primary sm:text-6xl md:text-7xl">
+          <h2 className="font-headline-mozi text-5xl font-bold tracking-tight text-text-primary sm:text-6xl md:text-7xl">
             Building with <span className="text-accent-green">curiosity</span>
             <br />
             and purpose.
-          </h1>
+          </h2>
         </MotionFadeUp>
 
         <MotionFadeUp delay={0.2}>

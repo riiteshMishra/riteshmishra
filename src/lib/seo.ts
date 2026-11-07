@@ -5,7 +5,7 @@ export const siteConfig = {
   title: "Ritesh Mishra — Full Stack Developer",
   description:
     "Portfolio of Ritesh Mishra, a Full Stack Developer building modern, scalable web applications.",
-  url: "https://www.riteshmishra.online",
+  url: "https://riteshmishra.online",
   locale: "en_IN",
   image: "/opengraph-image",
   github: "https://github.com/riiteshmishra",

@@ -17,7 +17,7 @@ export const contactDetails = [
     icon: LineChart,
     label: "LinkedIn",
     value: "Connect with me",
-    href: "hhttps://www.linkedin.com/in/ritesh-mishra-059519352/",
+    href: "https://www.linkedin.com/in/ritesh-mishra-059519352/",
   },
   {
     icon: MapPin,
