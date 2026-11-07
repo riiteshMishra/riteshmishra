@@ -3,10 +3,14 @@ import SkillsGrid from "./skills-grid";
 import SkillsHero from "./skills-hero";
 import { pageShell } from "@/lib/layout";
 
-const SkillsPage = () => {
+interface SkillsPageProps {
+  headingLevel?: "h1" | "h2";
+}
+
+const SkillsPage = ({ headingLevel = "h1" }: SkillsPageProps) => {
   return (
     <main className={pageShell}>
-      <SkillsHero />
+      <SkillsHero as={headingLevel} />
 
       <SkillsGrid />
 

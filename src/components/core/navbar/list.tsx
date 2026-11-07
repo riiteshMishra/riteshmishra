@@ -22,7 +22,9 @@ const NavList = ({ navlist }: NavListProps) => {
     <ul className="hidden md:flex items-center gap-2">
       {navlist.map((item) => {
         const isActive =
-          item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+          item.href === "/"
+            ? pathname === "/"
+            : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
         return (
           <motion.li
@@ -35,7 +37,7 @@ const NavList = ({ navlist }: NavListProps) => {
             <Link
               href={item.href}
               onClick={handleHaptic}
-              className="relative block px-4 py-1"
+              className="relative block px-4 py-1 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-green"
             >
               {isActive && (
                 <motion.span

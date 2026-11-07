@@ -19,7 +19,7 @@ const Button = ({
   endIcon,
 }: ButtonProps) => {
   const baseStyles =
-    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-roboto text-sm font-medium transition-all duration-300";
+    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-roboto text-sm font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-green";
 
   const variants = {
     primary: "bg-accent-green text-black hover:scale-105",

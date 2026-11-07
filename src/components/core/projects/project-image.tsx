@@ -17,7 +17,7 @@ const ProjectImage = ({ project }: ProjectImageProps) => {
       {project.image ? (
         <Image
           src={project.image}
-          alt={`${project.title} project preview`}
+          alt={`${project.title} ${project.category} project screenshot`}
           fill
           sizes={
             project.featured

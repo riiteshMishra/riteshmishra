@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/common/Button";
 import GreenChip from "@/components/common/green-chips";
 import { ArrowUpRight, FolderOpen } from "lucide-react";
@@ -38,6 +36,16 @@ const Introduction = () => {
             Let&apos;s Talk
           </Button>
         </div>
+
+        <p className="mt-6 font-roboto text-sm text-text-muted">
+          <a
+            href="/ritesh-mishra-resume.pdf"
+            download="ritesh-mishra-resume.pdf"
+            className="inline-flex items-center gap-1.5 text-accent-green transition-colors hover:text-accent-green/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-green"
+          >
+            Download resume (PDF)
+          </a>
+        </p>
       </div>
     </section>
   );

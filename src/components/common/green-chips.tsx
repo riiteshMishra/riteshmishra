@@ -13,7 +13,7 @@ const GreenChip = ({ title = "Available for new projects" }: ChipsProps) => {
         <motion.span className="relative flex size-2.5 shrink-0 items-center justify-center">
           {/* Soft Wave */}
           <motion.span
-            className="absolute size-2.5 rounded-full border border-accent-green/70"
+            className="absolute size-2.5 rounded-full border border-accent-green/70 motion-reduce:animate-none"
             animate={{
               scale: [1, 2.2, 3],
               opacity: [0.5, 0.2, 0],

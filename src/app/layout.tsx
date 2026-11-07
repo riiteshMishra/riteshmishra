@@ -5,7 +5,6 @@ import {
   roboto,
   headlineSans,
   headlineMozi,
-  headlineFin,
 } from "@/fonts";
 
 import "./globals.css";
@@ -13,7 +12,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { personJsonLd, siteConfig, siteUrl, websiteJsonLd } from "@/lib/seo";
 import Providers from "@/providers";
 import SiteChrome from "@/components/common/SiteChrome";
-import Navigaion from "@/components/common/navigation";
+import Navigation from "@/components/common/navigation";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -70,15 +69,20 @@ export default function RootLayout({
         ${roboto.variable}
         ${headlineSans.variable}
         ${headlineMozi.variable}
-        ${headlineFin.variable}
       `}
     >
       <body className="min-h-full flex flex-col antialiased">
         <JsonLd data={websiteJsonLd} />
         <JsonLd data={personJsonLd} />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-full focus:bg-accent-green focus:px-4 focus:py-2 focus:text-black"
+        >
+          Skip to content
+        </a>
         <Providers>
           <SiteChrome>{children}</SiteChrome>
-          <Navigaion />
+          <Navigation />
         </Providers>
       </body>
     </html>

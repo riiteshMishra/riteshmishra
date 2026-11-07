@@ -58,6 +58,41 @@ export const createPageMetadata = ({
   },
 });
 
+export interface WebPageJsonLdOptions {
+  name: string;
+  description: string;
+  url: string;
+}
+
+export const createWebPageJsonLd = ({
+  name,
+  description,
+  url,
+}: WebPageJsonLdOptions) => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name,
+  description,
+  url,
+  isPartOf: { "@type": "WebSite", name: siteConfig.name, url: siteConfig.url },
+});
+
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+export const createBreadcrumbJsonLd = (items: BreadcrumbItem[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
+});
+
 export const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -65,7 +100,19 @@ export const personJsonLd = {
   url: siteConfig.url,
   image: absoluteUrl("/ritesh-mishra.jpg"),
   jobTitle: "Full Stack Developer",
-  sameAs: [siteConfig.github],
+  email: "mailto:riteshmishra.dev@gmail.com",
+  sameAs: [siteConfig.github, "https://www.linkedin.com/in/ritesh-mishra-059519352/"],
+  knowsAbout: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Redis",
+    "REST APIs",
+    "Full Stack Development",
+  ],
 };
 
 export const websiteJsonLd = {
@@ -73,4 +120,8 @@ export const websiteJsonLd = {
   "@type": "WebSite",
   name: siteConfig.name,
   url: siteConfig.url,
+  publisher: {
+    "@type": "Person",
+    name: siteConfig.name,
+  },
 };

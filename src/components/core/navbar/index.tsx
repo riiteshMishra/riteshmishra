@@ -13,21 +13,25 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
 
-  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastScrollY = useRef(0);
 
-  useMotionValueEvent(scrollY, "change", () => {
-    setHidden(true);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = lastScrollY.current;
 
-    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-
-    scrollTimeout.current = setTimeout(() => {
+    if (latest < 10) {
       setHidden(false);
-    }, 150);
+    } else if (latest > previous + 8) {
+      setHidden(true);
+    } else if (latest < previous - 8) {
+      setHidden(false);
+    }
+
+    lastScrollY.current = latest;
   });
 
   useEffect(() => {
     return () => {
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      lastScrollY.current = 0;
     };
   }, []);
 

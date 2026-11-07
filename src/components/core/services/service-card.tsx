@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MotionFadeUp from "@/components/common/motion-fade-up";
 import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -45,10 +46,13 @@ const ServiceCard = ({
           ))}
         </ul>
 
-        <div className="mt-8 flex items-center gap-2 font-roboto text-sm font-medium text-accent-green cursor-pointer">
-          <span>Explore service</span>
-          <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none " />
-        </div>
+        <Link
+          href="/contact"
+          className="mt-8 inline-flex items-center gap-2 font-roboto text-sm font-medium text-accent-green transition-colors hover:text-accent-green/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-green"
+        >
+          <span>Discuss this service</span>
+          <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none" />
+        </Link>
       </article>
     </MotionFadeUp>
   );

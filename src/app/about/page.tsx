@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { createPageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import { createPageMetadata, createWebPageJsonLd, createBreadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import AboutSection from "@/components/core/home/about";
 
 export const metadata: Metadata = createPageMetadata({
@@ -11,9 +12,25 @@ export const metadata: Metadata = createPageMetadata({
 
 const AboutPage = () => {
   return (
-    <main>
-      <AboutSection />
-    </main>
+    <>
+      <JsonLd
+        data={createWebPageJsonLd({
+          name: "About | Ritesh Mishra",
+          description:
+            "Discover Ritesh Mishra's background, technical skills, and approach to building modern web applications using React, Next.js, Node.js, and TypeScript.",
+          url: absoluteUrl("/about"),
+        })}
+      />
+      <JsonLd
+        data={createBreadcrumbJsonLd([
+          { name: "Home", url: absoluteUrl("/") },
+          { name: "About", url: absoluteUrl("/about") },
+        ])}
+      />
+      <main>
+        <AboutSection />
+      </main>
+    </>
   );
 };
 

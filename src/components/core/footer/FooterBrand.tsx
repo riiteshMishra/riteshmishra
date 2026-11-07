@@ -13,7 +13,7 @@ const FooterBrand = () => {
       {/* Brand */}
       <Link
         href="/"
-        aria-label="Ritesh Mishra home"
+        aria-label="Ritesh Mishra"
         className="group inline-flex items-center gap-2"
       >
         <span className="font-headline-mozi text-3xl font-bold tracking-tight text-text-primary transition-colors duration-300 group-hover:text-accent-green">
@@ -35,7 +35,7 @@ const FooterBrand = () => {
       {/* Availability */}
       <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3 py-2">
         <span className="relative flex size-2">
-          <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent-green opacity-40" />
+          <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent-green opacity-40 motion-reduce:animate-none" />
           <span className="relative inline-flex size-2 rounded-full bg-accent-green" />
         </span>
 

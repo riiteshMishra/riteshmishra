@@ -15,7 +15,7 @@ export const pageShell = [
 export const pageSection = [
   "w-full",
   "px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12",
-  "pt-10 sm:py-12 md:py-16 lg:py-20 xl:py-24",
+  "py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24",
 ].join(" ");
 
 // Page hero layout

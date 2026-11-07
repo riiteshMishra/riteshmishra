@@ -7,10 +7,14 @@ import DevelopmentApproach from "../about/development-approach";
 import TechStack from "../about/tech-stack";
 import { pageSection } from "@/lib/layout";
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  headingLevel?: "h1" | "h2";
+}
+
+const AboutSection = ({ headingLevel = "h1" }: AboutSectionProps) => {
   return (
     <section className={pageSection}>
-      <AboutHero />
+      <AboutHero as={headingLevel} />
       <AboutIntroduction />
       <WhatIBuild />
       <TechStack />

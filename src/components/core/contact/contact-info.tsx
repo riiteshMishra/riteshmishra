@@ -71,7 +71,7 @@ const ContactInfo = () => {
       <div className="mt-8 rounded-2xl border border-accent-green/20 bg-accent-green/5 p-4">
         <div className="flex items-center gap-2">
           <span className="relative flex size-2.5">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent-green opacity-50" />
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent-green opacity-50 motion-reduce:animate-none" />
             <span className="relative inline-flex size-2.5 rounded-full bg-accent-green" />
           </span>
 

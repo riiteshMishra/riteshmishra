@@ -4,10 +4,14 @@ import ProjectsHero from "./projects-hero";
 import ProjectsCta from "./projects-cta";
 import { pageShell } from "@/lib/layout";
 
-const ProjectsPageData = () => {
+interface ProjectsPageDataProps {
+  headingLevel?: "h1" | "h2";
+}
+
+const ProjectsPageData = ({ headingLevel = "h1" }: ProjectsPageDataProps) => {
   return (
     <main className={`${pageShell} `}>
-      <ProjectsHero />
+      <ProjectsHero as={headingLevel} />
 
       <ProjectGrid projects={projects} />
 

@@ -3,10 +3,14 @@ import ExperienceHero from "./experience-hero";
 import ExperienceTimeline from "./experience-timeline";
 import { pageShell } from "@/lib/layout";
 
-const ExperiencePage = () => {
+interface ExperiencePageProps {
+  headingLevel?: "h1" | "h2";
+}
+
+const ExperiencePage = ({ headingLevel = "h1" }: ExperiencePageProps) => {
   return (
     <main className={`${pageShell}`}>
-      <ExperienceHero />
+      <ExperienceHero as={headingLevel} />
 
       <ExperienceTimeline />
 

@@ -18,28 +18,29 @@ export const isRouteActive = (pathname: string, href: string) =>
     ? pathname === "/"
     : pathname === href || pathname.startsWith(`${href}/`);
 
-const Navigaion = () => {
+const Navigation = () => {
   const pathname = usePathname();
 
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
 
-  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastScrollY = useRef(0);
 
-  useMotionValueEvent(scrollY, "change", () => {
-    setHidden(true);
-
-    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-
-    scrollTimeout.current = setTimeout(() => {
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 10) {
       setHidden(false);
-    }, 150);
+    } else if (latest > lastScrollY.current + 8) {
+      setHidden(true);
+    } else if (latest < lastScrollY.current - 8) {
+      setHidden(false);
+    }
+
+    lastScrollY.current = latest;
   });
 
-  // FIX: UNMOUNT PAR TIMER CLEAR
   useEffect(() => {
     return () => {
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      lastScrollY.current = 0;
     };
   }, []);
 
@@ -67,7 +68,7 @@ const Navigaion = () => {
               <Link
                 href={href}
                 onClick={handleHaptic}
-                className={`flex flex-col items-center gap-1 text-sm transition-colors hover:text-accent-green ${
+                className={`flex min-h-11 flex-col items-center justify-center gap-1 text-sm transition-colors hover:text-accent-green focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-green rounded-md ${
                   isActive ? "text-accent-green" : "text-text-muted"
                 }`}
               >
@@ -82,4 +83,4 @@ const Navigaion = () => {
   );
 };
 
-export default Navigaion;
+export default Navigation;

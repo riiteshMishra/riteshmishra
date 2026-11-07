@@ -31,7 +31,7 @@ const FooterConnect = () => {
           <a
             key={label}
             href={href}
-            target={"_blank"}
+            target={href.startsWith("mailto:") ? undefined : "_blank"}
             rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
             aria-label={label}
             className="flex size-10 items-center justify-center rounded-full border border-border bg-card text-text-muted transition-all duration-300 hover:border-accent-green/30 hover:text-accent-green"

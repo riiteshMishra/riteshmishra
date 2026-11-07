@@ -1,7 +1,12 @@
 import MotionFadeUp from "@/components/common/motion-fade-up";
 import { pageHero } from "@/lib/layout";
 
-const ExperienceHero = () => {
+interface ExperienceHeroProps {
+  as?: "h1" | "h2";
+}
+
+const ExperienceHero = ({ as = "h1" }: ExperienceHeroProps) => {
+  const Heading = as;
   return (
     <MotionFadeUp>
       <section className={pageHero}>
@@ -9,9 +14,9 @@ const ExperienceHero = () => {
           Experience
         </p>
 
-        <h1 className="font-headline-mozi text-4xl font-bold tracking-tight sm:text-6xl">
+        <Heading className="font-headline-mozi text-4xl font-bold tracking-tight sm:text-6xl">
           My journey so far.
-        </h1>
+        </Heading>
 
         <p className="mt-6 max-w-2xl font-roboto text-base leading-7 text-text-muted sm:text-lg">
           A look at the projects, technologies and experiences that have shaped

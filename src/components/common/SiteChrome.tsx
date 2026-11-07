@@ -23,7 +23,9 @@ export default function SiteChrome({
     <>
       {isPublicRoute && <Navbar />}
 
-      {children}
+      <div id="main-content" tabIndex={-1}>
+        {children}
+      </div>
 
       {isPublicRoute && <Footer />}
     </>

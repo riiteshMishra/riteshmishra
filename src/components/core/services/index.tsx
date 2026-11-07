@@ -3,10 +3,14 @@ import ServicesCta from "./services-cta";
 import ServicesGrid from "./services-grid";
 import ServicesHero from "./services-hero";
 
-const ServicesPage = () => {
+interface ServicesPageProps {
+  headingLevel?: "h1" | "h2";
+}
+
+const ServicesPage = ({ headingLevel = "h1" }: ServicesPageProps) => {
   return (
     <main className={`${pageShell}`}>
-      <ServicesHero />
+      <ServicesHero as={headingLevel} />
 
       <ServicesGrid />
 

@@ -3,7 +3,6 @@ import {
   Mozilla_Headline,
   Roboto,
   Stack_Sans_Headline,
-  Finlandica_Headline,
 } from "next/font/google";
 
 // GOOGLE FONTS
@@ -21,12 +20,6 @@ export const headlineSans = Stack_Sans_Headline({
 
 export const headlineMozi = Mozilla_Headline({
   variable: "--font-family-headline-mozi",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-});
-
-export const headlineFin = Finlandica_Headline({
-  variable: "--font-family-headline-fin",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });

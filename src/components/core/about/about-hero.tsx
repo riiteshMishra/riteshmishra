@@ -1,7 +1,12 @@
 import { Sparkles } from "lucide-react";
 import MotionFadeUp from "@/components/common/motion-fade-up";
 
-const AboutHero = () => {
+interface AboutHeroProps {
+  as?: "h1" | "h2";
+}
+
+const AboutHero = ({ as = "h1" }: AboutHeroProps) => {
+  const Heading = as;
   return (
     <div className="">
       <section className="mx-auto max-w-4xl text-center relative">
@@ -16,11 +21,11 @@ const AboutHero = () => {
         </MotionFadeUp>
 
         <MotionFadeUp delay={0.1}>
-          <h2 className="font-headline-mozi text-5xl font-bold tracking-tight text-text-primary sm:text-6xl md:text-7xl">
+          <Heading className="font-headline-mozi text-5xl font-bold tracking-tight text-text-primary sm:text-6xl md:text-7xl">
             Building with <span className="text-accent-green">curiosity</span>
             <br />
             and purpose.
-          </h2>
+          </Heading>
         </MotionFadeUp>
 
         <MotionFadeUp delay={0.2}>

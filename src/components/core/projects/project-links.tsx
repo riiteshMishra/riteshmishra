@@ -9,7 +9,7 @@ interface ProjectLinksProps {
 const ProjectLinks = ({ project }: ProjectLinksProps) => {
   return (
     <div className="mt-7 flex items-center gap-3">
-      {project.liveDemo !== "#" && (
+      {project.liveDemo && project.liveDemo !== "#" && (
         <a
           href={project.liveDemo}
           target="_blank"
@@ -21,7 +21,7 @@ const ProjectLinks = ({ project }: ProjectLinksProps) => {
         </a>
       )}
 
-      {project.github !== "#" && (
+      {project.github && project.github !== "#" && (
         <a
           href={project.github}
           target="_blank"
