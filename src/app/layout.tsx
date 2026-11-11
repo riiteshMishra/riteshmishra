@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 
-import {
-  anton,
-  roboto,
-  headlineSans,
-  headlineMozi,
-} from "@/fonts";
+import { anton, roboto, headlineSans, headlineMozi } from "@/fonts";
 
 import "./globals.css";
 import JsonLd from "@/components/seo/JsonLd";
@@ -26,6 +21,9 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   publisher: siteConfig.name,
   alternates: { canonical: "/" },
+  verification: {
+    google: "-_asqf_32tcIBsfVbbdCQhy7cOnHdO3wYAu1dJ-I-oU",
+  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
