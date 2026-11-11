@@ -11,7 +11,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/ritesh-mishra-059519352",
+    href: "https://www.linkedin.com/in/ritesh-mishra-059519352/",
     icon: FaLinkedin,
   },
   {
