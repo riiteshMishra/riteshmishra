@@ -7,6 +7,7 @@ import { Send, LoaderCircle } from "lucide-react";
 interface ContactFormValues {
   name: string;
   email: string;
+  phone: string;
   subject: string;
   message: string;
 }
@@ -15,11 +16,13 @@ const inputClass =
   "w-full rounded-2xl border border-border bg-background px-4 py-3 font-roboto text-sm outline-none transition-colors placeholder:text-text-muted/60 focus-visible:border-accent-green/50 focus-visible:ring-2 focus-visible:ring-accent-green/20 aria-[invalid=true]:border-red-500";
 
 const ContactForm = () => {
-  const [submitStatus, setSubmitStatus] = useState<"error" | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
     mode: "onBlur",
@@ -27,17 +30,36 @@ const ContactForm = () => {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       subject: "",
       message: "",
     },
   });
 
-  const onSubmit: SubmitHandler<ContactFormValues> = async () => {
+  const onSubmit: SubmitHandler<ContactFormValues> = async (values) => {
     setSubmitStatus(null);
+    setServerError(null);
 
-    // No contact submission endpoint is configured in this project.
-    // Do not report success unless a real request succeeds.
-    setSubmitStatus("error");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setSubmitStatus("error");
+        setServerError(data?.error || "Failed to send message. Please try again.");
+        return;
+      }
+
+      setSubmitStatus("success");
+      reset();
+    } catch {
+      setSubmitStatus("error");
+      setServerError("Network error. Please try again.");
+    }
   };
 
   return (
@@ -143,6 +165,42 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Phone */}
+        <div>
+          <label
+            htmlFor="phone"
+            className="mb-2 block font-roboto text-sm font-medium"
+          >
+            Phone <span className="text-text-muted">(optional)</span>
+          </label>
+
+          <input
+            id="phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="+91 98765 43210"
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? "phone-error" : undefined}
+            className={inputClass}
+            {...register("phone", {
+              maxLength: {
+                value: 30,
+                message: "Phone cannot exceed 30 characters.",
+              },
+            })}
+          />
+
+          {errors.phone && (
+            <p
+              id="phone-error"
+              role="alert"
+              className="mt-1.5 text-xs text-red-500"
+            >
+              {errors.phone.message}
+            </p>
+          )}
+        </div>
+
         {/* Subject */}
         <div>
           <label
@@ -229,10 +287,14 @@ const ContactForm = () => {
         </div>
 
         {/* Submission feedback */}
+        {submitStatus === "success" && (
+          <p role="status" className="text-sm text-accent-green">
+            Thank you! Your message has been sent. I&apos;ll get back to you soon.
+          </p>
+        )}
         {submitStatus === "error" && (
           <p role="alert" className="text-sm text-red-500">
-            The contact form is not connected to a backend yet. Please email
-            riteshmishra.dev@gmail.com directly.
+            {serverError || "Failed to send message. Please try again."}
           </p>
         )}
 
